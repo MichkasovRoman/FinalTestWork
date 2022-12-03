@@ -3,7 +3,7 @@
 // либо задать на старте выполнения алгоритма.
 
 string[] GetStringArray(int size)
-{
+{ // метод создает массив строк, элементы которого вводятся пользователем с клавиатуры
     string[] stringArray = new string[size];
     for (int i = 0; i < size; i++)
     {
@@ -14,6 +14,7 @@ string[] GetStringArray(int size)
 }
 
 Console.Clear();
+
 Console.Write("Введите размер массива: ");
 int sizeOfarray = int.Parse(Console.ReadLine()!);
 string[] workingArray = GetStringArray(sizeOfarray);
