@@ -7,8 +7,13 @@ string[] GetStringArray(int size)
     string[] stringArray = new string[size];
     for (int i = 0; i < size; i++)
     {
-        Console.WriteLine($"Введите {i}-й элемент массива: ");
-        Console.ReadLine(stringArray[i]);
+        Console.Write($"Введите {i}-й элемент массива: ");
+        stringArray[i] = Console.ReadLine()!;
     }
     return stringArray;
 }
+
+Console.Clear();
+int n = int.Parse(Console.ReadLine()!);
+string[] workingArray = GetStringArray(n);
+Console.WriteLine(String.Join(", ", workingArray));
