@@ -13,13 +13,24 @@ string[] GetStringArray(int size)
     return stringArray;
 }
 
+int GetNumberOfElements(string[] array)
+{ //метод считает количество строк в массиве, состоящих из не более, чем трех символов
+    int count = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= 3) count++;
+    }
+    return count;
+}
+
 string[] GetShortenedArray(string[] array)
-{
-    string[] result = new string[];
+{ // метод формирует массив из элементов массива array, состоящих из трех и менее символов
+    int threeSymbols = GetNumberOfElements(array); // количество строк в массиве array, 
+    string[] result = new string[threeSymbols];    //                  состоящих из трех и менее символов       
     int j = 0;
     for (int i = 0; i < array.Length; i++)
     {
-        if array[i].Length <= 3 
+        if (array[i].Length <= 3) 
         {
             result[j] = array[i];
             j++;
@@ -35,5 +46,8 @@ int sizeOfarray = int.Parse(Console.ReadLine()!);
 string[] workingArray = GetStringArray(sizeOfarray);
 Console.WriteLine(String.Empty);
 Console.WriteLine("Полученный массив: ");
-Console.WriteLine(String.Empty);
 Console.WriteLine(String.Join(", ", workingArray));
+string[] resultingArray = GetShortenedArray(workingArray);
+Console.WriteLine(String.Empty);
+Console.WriteLine("Массив, составленный из строк размером в три символа: ");
+Console.WriteLine(String.Join(", ", resultingArray));
