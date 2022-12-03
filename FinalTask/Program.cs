@@ -13,6 +13,21 @@ string[] GetStringArray(int size)
     return stringArray;
 }
 
+string[] GetShortenedArray(string[] array)
+{
+    string[] result = new string[];
+    int j = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if array[i].Length <= 3 
+        {
+            result[j] = array[i];
+            j++;
+        }
+    }
+    return result;
+}
+
 Console.Clear();
 
 Console.Write("Введите размер массива: ");
