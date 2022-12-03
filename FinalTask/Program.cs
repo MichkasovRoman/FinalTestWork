@@ -49,5 +49,5 @@ Console.WriteLine("Полученный массив: ");
 Console.WriteLine(String.Join(", ", workingArray));
 string[] resultingArray = GetShortenedArray(workingArray);
 Console.WriteLine(String.Empty);
-Console.WriteLine("Массив, составленный из строк размером в три символа: ");
+Console.WriteLine("Новый массив: ");
 Console.WriteLine(String.Join(", ", resultingArray));
