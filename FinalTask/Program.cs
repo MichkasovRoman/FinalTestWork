@@ -14,6 +14,10 @@ string[] GetStringArray(int size)
 }
 
 Console.Clear();
-int n = int.Parse(Console.ReadLine()!);
-string[] workingArray = GetStringArray(n);
+Console.Write("Введите размер массива: ");
+int sizeOfarray = int.Parse(Console.ReadLine()!);
+string[] workingArray = GetStringArray(sizeOfarray);
+Console.WriteLine(String.Empty);
+Console.WriteLine("Полученный массив: ");
+Console.WriteLine(String.Empty);
 Console.WriteLine(String.Join(", ", workingArray));
