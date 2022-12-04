@@ -45,9 +45,17 @@ Console.Write("Введите размер массива: ");
 int sizeOfarray = int.Parse(Console.ReadLine()!);
 string[] workingArray = GetStringArray(sizeOfarray);
 Console.WriteLine(String.Empty);
-Console.WriteLine("Полученный массив: ");
+Console.WriteLine("Введенный вами массив: ");
 Console.WriteLine(String.Join(", ", workingArray));
 string[] resultingArray = GetShortenedArray(workingArray);
 Console.WriteLine(String.Empty);
-Console.WriteLine("Новый массив: ");
-Console.WriteLine(String.Join(", ", resultingArray));
+
+if (resultingArray.Length == 0) 
+{
+    Console.WriteLine("В веденном вами массиве не оказалось строк длиной не более, чем 3 символа.");
+}
+else
+{
+    Console.WriteLine("Массив, составленный из строк введенного вами массива, длина которых не более, чем три символа: ");
+    Console.WriteLine(String.Join(", ", resultingArray));
+}
